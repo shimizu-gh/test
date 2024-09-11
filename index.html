@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pyxel Web Test</title>
+    <!-- Pyxel for Web用のJavaScriptライブラリを読み込み -->
     <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
   </head>
   <body>
+    <!-- Pyxelの実行を指定 -->
     <pyxel-run src="main.py"></pyxel-run>
+
+    <!-- Pyxelプログラムの読み込みと実行を待機するためのスクリプト -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let pyxelRunElement = document.querySelector("pyxel-run");
+        pyxelRunElement.onload = function () {
+          pyxelRunElement.run();
+        };
+      });
+    </script>
   </body>
 </html>
