@@ -12,21 +12,13 @@
     <script type="text/javascript">
         async function loadPyxel() {
             let pyodide = await loadPyodide();
-            await pyodide.runPythonAsync(`
-                import pyxel
 
-                pyxel.init(160, 120)
+            // main.pyファイルを取得
+            const response = await fetch('main.py');
+            const pythonCode = await response.text();
 
-                def update():
-                    if pyxel.btnp(pyxel.KEY_Q):
-                        pyxel.quit()
-
-                def draw():
-                    pyxel.cls(0)
-                    pyxel.text(55, 41, "Hello, Pyxel!", pyxel.frame_count % 16)
-
-                pyxel.run(update, draw)
-            `);
+            // Pythonコードを実行
+            await pyodide.runPythonAsync(pythonCode);
         }
         loadPyxel();
     </script>
