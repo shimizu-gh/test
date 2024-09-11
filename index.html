@@ -10,15 +10,5 @@
   <body>
     <!-- Pyxelの実行を指定 -->
     <pyxel-run src="main.py"></pyxel-run>
-
-    <!-- Pyxelプログラムの読み込みと実行を待機するためのスクリプト -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let pyxelRunElement = document.querySelector("pyxel-run");
-        pyxelRunElement.onload = function () {
-          pyxelRunElement.run();
-        };
-      });
-    </script>
   </body>
 </html>
