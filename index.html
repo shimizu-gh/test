@@ -1,26 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pyxel for Web Example</title>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
-</head>
-<body>
-    <h1>Pyxel for Web2</h1>
-    <div id="pyxel-container"></div>
-    <script type="text/javascript">
-        async function loadPyxel() {
-            let pyodide = await loadPyodide();
-
-            // main.pyファイルを取得
-            const response = await fetch('main.py');
-            const pythonCode = await response.text();
-
-            // Pythonコードを実行
-            await pyodide.runPythonAsync(pythonCode);
-        }
-        loadPyxel();
-    </script>
-</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+  </head>
+  <body>
+    <pyxel-run root="." name="main.py"></pyxel-run>
+  </body>
 </html>
