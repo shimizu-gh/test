@@ -1,4 +1,4 @@
-import pyxel
+from pyxel_wrapper import *
 
 class App:
     def __init__(self):
